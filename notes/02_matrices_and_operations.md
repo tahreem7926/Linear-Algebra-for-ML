@@ -20,7 +20,15 @@ so matrix multiplication is defined exactly so that it represents function compo
 
 **Associativity proof.** 
 
-$((AB)C)_{il} = \sum_k (AB)_{ik}C_{kl} = \sum_k \sum_j A_{ij}B_{jk}C_{kl} = \sum_j A_{ij}\sum_k B_{jk}C_{kl} = \sum_j A_{ij}(BC)_{jl} = (A(BC))_{il}$
+$$
+\begin{aligned}
+((AB)C)_{il} &= \sum_k (AB)_{ik}C_{kl} \\
+&= \sum_k \sum_j A_{ij}B_{jk}C_{kl} \\
+&= \sum_j A_{ij}\sum_k B_{jk}C_{kl} \\
+&= \sum_j A_{ij}(BC)_{jl} \\
+&= (A(BC))_{il}
+\end{aligned}
+$$
 The sums commute freely because they're finite sums of real numbers, so the order of summation doesn't matter — the "proof" is really just relabeling which sum you do first.
 
 **Non-commutativity is not a technicality — it's geometry.** $AB \neq BA$ in general because "rotate then shear" is a different transformation from "shear then rotate." Composition of functions was never commutative; matrix multiplication inherits that.
