@@ -36,9 +36,22 @@ The sums commute freely because they're finite sums of real numbers, so the orde
 
 ## 2.3 Transpose and symmetric matrices
 
-$(A^\top)_{ij} = A_{ji}$. Key identity: $(AB)^\top = B^\top A^\top$ (order reverses).
+$$
+\begin{aligned}
+((AB)^\top)_{ij} &= (AB)_{ji} \quad \blacksquare
+\end{aligned}
+$$. Key identity: $(AB)^\top = B^\top A^\top$ (order reverses).
 
-*Proof.* $((AB)^\top)_{ij} = (AB)_{ji} = \sum_k A_{jk}B_{ki} = \sum_k B_{ki}A_{jk} = \sum_k (B^\top)_{ik}(A^\top)_{kj} = (B^\top A^\top)_{ij}$. $\blacksquare$
+*Proof.*
+$$
+\begin{aligned}
+((AB)^\top)_{ij} &= (AB)_{ji} \\
+&= \sum_k A_{jk}B_{ki} \\
+&= \sum_k B_{ki}A_{jk} \\
+&= \sum_k (B^\top)_{ik}(A^\top)_{kj} \\
+&= (B^\top A^\top)_{ij} \quad \blacksquare
+\end{aligned}
+$$
 
 $A$ is **symmetric** if $A^\top = A$. Symmetric matrices are exactly the matrices that arise from quadratic forms and inner-product-like structures — covariance matrices, Gram matrices, and Hessians of scalar functions are all symmetric, which is why Chapter 5's spectral theorem (special eigenstructure for symmetric matrices) is quietly doing most of the work behind PCA, kernel methods, and second-order optimization.
 
@@ -68,7 +81,21 @@ For a $2\times2$ matrix, $\det\begin{bmatrix}a&b\\c&d\end{bmatrix} = ad-bc$. In 
 
 $\mathrm{tr}(A) = \sum_i A_{ii}$. Useful identity: $\mathrm{tr}(AB) = \mathrm{tr}(BA)$ even though $AB \neq BA$ in general.
 
-*Proof.* $\mathrm{tr}(AB) = \sum_i (AB)_{ii} = \sum_i \sum_j A_{ij}B_{ji} = \sum_j \sum_i B_{ji}A_{ij} = \sum_j (BA)_{jj} = \mathrm{tr}(BA)$. $\blacksquare$
+*Proof.* 
+$$
+\begin{aligned}
+\mathrm{tr}(AB) &= \sum_i (AB)_{ii} \\
+&= \sum_i \sum_j A_{ij}B_{ji} \\
+&= \sum_j \sum_i B_{ji}A_{ij} \\
+&= \sum_j (BA)_{jj} \\
+&= \mathrm{tr}(BA) \quad \blacksquare
+\end{aligned}
+$$
+
+This "cyclic property" allows you to rotate the matrices inside the trace:
+$$
+\mathrm{tr}(ABC) = \mathrm{tr}(BCA) = \mathrm{tr}(CAB)
+$$
 
 This "cyclic property" ($\mathrm{tr}(ABC) = \mathrm{tr}(BCA) = \mathrm{tr}(CAB)$) is used constantly to simplify gradients of matrix expressions in ML derivations (e.g., deriving the gradient of $\mathrm{tr}(A^\top B)$ with respect to $A$).
 
@@ -97,7 +124,13 @@ A = \begin{bmatrix}0&-1\\1&0\end{bmatrix} \text{ (90° rotation)}, \quad
 B = \begin{bmatrix}2&0\\0&1\end{bmatrix} \text{ (stretch x by 2)}
 $$
 
-$AB$ = "stretch then rotate": $AB = \begin{bmatrix}0&-1\\2&0\end{bmatrix}$. $BA$ = "rotate then stretch": $BA = \begin{bmatrix}0&-2\\1&0\end{bmatrix}$. Different matrices — confirming non-commutativity is geometric, not a notational accident. Verified numerically in `code/02_matrices_and_operations.py`.
+$$
+AB = \text{"stretch then rotate"} = \begin{bmatrix} 0 & -1 \\ 2 &  0 \end{bmatrix}
+$$
+
+$$
+BA = \text{"rotate then stretch"} = \begin{bmatrix} 0 & -2 \\ 1 &  0 \end{bmatrix}
+$$. Different matrices — confirming non-commutativity is geometric, not a notational accident. Verified numerically in `code/02_matrices_and_operations.py`.
 
 ## Further resources
 
