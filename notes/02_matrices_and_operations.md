@@ -29,6 +29,7 @@ $$
 &= (A(BC))_{il}
 \end{aligned}
 $$
+
 The sums commute freely because they're finite sums of real numbers, so the order of summation doesn't matter — the "proof" is really just relabeling which sum you do first.
 
 **Non-commutativity is not a technicality — it's geometry.** $AB \neq BA$ in general because "rotate then shear" is a different transformation from "shear then rotate." Composition of functions was never commutative; matrix multiplication inherits that.
