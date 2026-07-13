@@ -41,6 +41,7 @@ $$
 ((AB)^\top)_{ij} &= (AB)_{ji} \quad \blacksquare
 \end{aligned}
 $$
+
 Key identity: $(AB)^\top = B^\top A^\top$ (order reverses).
 
 *Proof.*
