@@ -40,9 +40,11 @@ $$
 \begin{aligned}
 ((AB)^\top)_{ij} &= (AB)_{ji} \quad \blacksquare
 \end{aligned}
-$$. Key identity: $(AB)^\top = B^\top A^\top$ (order reverses).
+$$
+Key identity: $(AB)^\top = B^\top A^\top$ (order reverses).
 
 *Proof.*
+
 $$
 \begin{aligned}
 ((AB)^\top)_{ij} &= (AB)_{ji} \\
@@ -81,7 +83,8 @@ For a $2\times2$ matrix, $\det\begin{bmatrix}a&b\\c&d\end{bmatrix} = ad-bc$. In 
 
 $\mathrm{tr}(A) = \sum_i A_{ii}$. Useful identity: $\mathrm{tr}(AB) = \mathrm{tr}(BA)$ even though $AB \neq BA$ in general.
 
-*Proof.* 
+*Proof.*
+
 $$
 \begin{aligned}
 \mathrm{tr}(AB) &= \sum_i (AB)_{ii} \\
@@ -90,11 +93,6 @@ $$
 &= \sum_j (BA)_{jj} \\
 &= \mathrm{tr}(BA) \quad \blacksquare
 \end{aligned}
-$$
-
-This "cyclic property" allows you to rotate the matrices inside the trace:
-$$
-\mathrm{tr}(ABC) = \mathrm{tr}(BCA) = \mathrm{tr}(CAB)
 $$
 
 This "cyclic property" ($\mathrm{tr}(ABC) = \mathrm{tr}(BCA) = \mathrm{tr}(CAB)$) is used constantly to simplify gradients of matrix expressions in ML derivations (e.g., deriving the gradient of $\mathrm{tr}(A^\top B)$ with respect to $A$).
@@ -130,7 +128,9 @@ $$
 
 $$
 BA = \text{"rotate then stretch"} = \begin{bmatrix} 0 & -2 \\ 1 &  0 \end{bmatrix}
-$$. Different matrices — confirming non-commutativity is geometric, not a notational accident. Verified numerically in `code/02_matrices_and_operations.py`.
+$$
+
+Different matrices — confirming non-commutativity is geometric, not a notational accident. Verified numerically in `code/02_matrices_and_operations.py`.
 
 ## Further resources
 
