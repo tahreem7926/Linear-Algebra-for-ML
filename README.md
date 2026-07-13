@@ -20,12 +20,12 @@ Every topic follows the same four-part structure:
 | 6 | Orthogonality and QR Decomposition | [notes/06_orthogonality_and_qr_decomposition.md](notes/06_orthogonality_and_qr_decomposition.md) | [code/06_qr_decomposition.py](code/06_qr_decomposition.py) |
 | 7 | Singular Value Decomposition | [notes/07_singular_value_decomposition.md](notes/07_singular_value_decomposition.md) | [code/07_svd.py](code/07_svd.py) |
 
-For a structured, resource-linked study plan (videos, courses, textbooks per topic)->[LEARNING_PATH.md].
+For a structured, resource-linked study plan (videos, courses, textbooks per topic)->(LEARNING_PATH.md).
 
 ## Prerequisites
 
-- Comfort with basic calculus (partial derivatives, for the least-squares derivations).
-- Python + NumPy fundamentals. PyTorch is used only where GPU batching / autodiff is the actual point (noted per-example).
+- Basic calculus (partial derivatives, for the least-squares derivations).
+- Python + NumPy fundamentals. PyTorch is used only where GPU batching / autodiff is the actual point.
 
 ## Running the code
 
